@@ -23,6 +23,7 @@
         lazygit     # | cli git helper
         neofetch    # | cli system information tool
         yazi        # | cli file explorer
+        gnome-extension-manager
     ];
 
 }
