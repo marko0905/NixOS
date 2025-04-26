@@ -1,0 +1,19 @@
+# Font-family
+font-family = "JetBrains Mono"
+font-size = 14
+
+# Background settings
+#background = "282c34"
+background = "242b62"
+background-opacity = 0.9
+background-blur-radius = 50
+
+# Keybinding to switch the tile
+keybind = cmd+shift+left=previous_tab
+keybind = cmd+shift+right=next_tab
+
+# Keybinding to move the current tab left
+keybind = cmd+alt+left=move_tab:-1
+
+# Keybinding to move the current tab right
+keybind = cmd+alt+right=move_tab:+1

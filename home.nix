@@ -22,7 +22,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    brave
+    # Add
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -38,7 +38,24 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/.zshrc";
+
+    # Symlink for the .zshrc file
+    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/dotfiles/.zshrc";
+
+    # Symlink for the .gitconfig file
+    ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/dotfiles/.gitconfig";
+
+    # Symlink for ghostty
+    ".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/dotfiles/.config/ghostty";
+
+    # Symlink for neofetch
+    ".config/neofetch".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/dotfiles/.config/neofetch";
+
+    # Symlink for the oh-my-posh
+    ".config/ohmyposh".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/dotfiles/.config/ohmyposh";
+
+    # Symlink for the yazi
+    ".config/yazi".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/dotfiles/.config/yazi";
   };
 
   # Home Manager can also manage your environment variables through
@@ -60,6 +77,9 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+
+  # ZSH setup
+  programs.zsh.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
