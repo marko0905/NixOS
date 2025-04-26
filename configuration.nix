@@ -10,9 +10,9 @@
       # Packages to install
       ./system/system-pkgs-zsh.nix
       ./system/system-pkgs-cli.nix
-      ./system/system-pkgs-dev.nix
+      ./system/pkgs-defaults.nix
       # Packages to remove
-      ./system/system-remove-pkgs.nix
+      ./system/pkgs-remove.nix
       # GNOME desktop environment
       ./system/system-gnome-desenv.nix
     ];
@@ -67,16 +67,16 @@
 
   # Packages to installed in system profile.
   environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
+    #vim
+    #wget
+    #git
   ];
 
   # Enable ssh agent
   programs.ssh.startAgent = true;
 
-  # Add git configuration for HTTPS URLs
-  programs.git.enable = true;
+  ## Add git configuration for HTTPS URLs
+  ##programs.git.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
