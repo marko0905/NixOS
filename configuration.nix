@@ -8,8 +8,6 @@
       # Enable experimental features (Flakes)
       ./system/system-experimental-features.nix
       # Packages to install
-      ./system/system-pkgs-zsh.nix
-      ./system/system-pkgs-cli.nix
       ./system/pkgs-defaults.nix
       # Packages to remove
       ./system/pkgs-remove.nix
@@ -66,17 +64,12 @@
   nixpkgs.config.allowUnfree = true;
 
   # Packages to installed in system profile.
-  environment.systemPackages = with pkgs; [
-    #vim
-    #wget
-    #git
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   # Adding pkgs with import modules
+  # ];
 
   # Enable ssh agent
   programs.ssh.startAgent = true;
-
-  ## Add git configuration for HTTPS URLs
-  ##programs.git.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

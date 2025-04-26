@@ -74,6 +74,7 @@ alias crestart='sudo reboot' # Restart computer
 alias nixupdate='nix flake update --flake ~/.dotfiles' # update NixOS from flake
 alias nixbuild='sudo nixos-rebuild switch --flake ~/.dotfiles' # build NixOS from flake
 alias hmbuild='home-manager switch --flake ~/.dotfiles'	#build the home manager from flake
+alias nixclean='nix-collect-garbage' # NixOS garbagecolect
 
 # ========== NVM Setup ==========
 export NVM_DIR="$HOME/.nvm"
